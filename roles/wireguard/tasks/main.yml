@@ -1,0 +1,51 @@
+---
+- name: Download jdoss-wireguard-epel-7.repo
+  get_url:
+    url: https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
+    dest: /etc/yum.repos.d/jdoss-wireguard-epel-7.repo
+    mode: '0440'
+
+- name: Install EPEL release RPM
+  yum:
+    name: "{{ wireguard_rpm_deps }}"
+    state: present
+  vars:
+    ansible_python_interpreter: /usr/bin/python
+
+# - name: (CentOS 7) Ensure WireGuard DKMS package is removed
+#   yum:
+#     name:
+#       - "wireguard-dkms"
+#     state: absent
+#   tags:
+#     - wg-install
+  # vars:
+  #   ansible_python_interpreter: /usr/bin/python
+
+  #  14  cd /etc/wireguard/
+  #  15  ls
+  #  16  mkdir keys
+  #  17  cd keys/
+  #  18  umask 077
+  #  19  wg genkey | tee privatekey | wg pubkey > publickey
+  #  20  ls
+  #  21  cat publickey
+  #  22  cat privatekey
+  #  23  vi /etc/wireguard/wg0.conf
+  #  24  wg-quick up wg0
+  #  25  systemctl enable wg-quick@wg0
+  #  26  wg set wg0 peer oRXO2wzHjvVbyxiiivtdTAtRf+UOhX5+tqlYWyV1PUI=  persistent-keepalive 25 allowed-ips 172.31.200.10/32
+  #  27  wg showconf wg0
+  #  28  wg showconf wg0 > /etc/wireguard/wg0.conf
+  #  29  wg setconf wg0 /etc/wireguard/wg0.conf
+  #  30  cat /etc/wireguard/keys/publickey
+  #  31  ip a
+  #  32  wg showconf wg0
+
+  #   110  sysctl -w net.ipv4.ip_forward=1
+  # 111  cat /etc/sysctl.conf
+  # 112  echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
+
+  #   241  aws --region eu-west-2 ssm get-parameter --name /wireguard/private --with-decryption --query Parameter.Value --output text
+  # 242  aws --region eu-west-2 ssm get-parameter --name wireguard-test --with-decryption --query Parameter.Value --output text
+  # 243  aws --region eu-west-2 ssm get-parameter --name wireguard-test --query Parameter.Value --output text
