@@ -1,3 +1,0 @@
----
-update_dns_rpm_deps:
-  - jq

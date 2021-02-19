@@ -1,4 +1,0 @@
----
-wireguard_rpm_deps:
-  - wireguard-dkms
-  - wireguard-tools
