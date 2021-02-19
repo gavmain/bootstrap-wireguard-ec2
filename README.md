@@ -48,7 +48,9 @@ I've written the installation as terraform, but if you want to run this manually
 
 ## Acknowledgements
 https://www.wireguard.com/
+
 https://github.com/githubixx/
+
 https://www.ifconfig.it/hugo/2020/04/aws-terraform-and-wireguard-part-one/
 
 
