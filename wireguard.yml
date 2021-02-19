@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+
+  roles:
+    - gavmain.ansible-role-update-route53-onboot
+    - githubixx.ansible_role_wireguard
+    - gavmain.ansible-role-wireguard-ssm
+
