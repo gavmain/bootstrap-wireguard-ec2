@@ -3,7 +3,7 @@
 This playbook is intended to be called by a Terraform bootstrap script when provisioning an EC2 instance which will become a [Wireguard](https://www.wireguard.com/) VPN endpoint. It has been written in a manner to require no remote SSH into the instance to configure, as this requires punching a temporary hole in the firewall, which I didn't want to do.
 
 
-##Installation
+## Installation
 
 I've written the installation as terraform, but if you want to run this manually you can:
 
