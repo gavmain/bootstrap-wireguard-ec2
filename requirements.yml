@@ -8,7 +8,7 @@ roles:
     version: v1.0.0
   - name: gavmain.ansible-role-update-route53-onboot
     src: https://github.com/gavmain/ansible-role-update-route53-onboot
-    version: v1.0.0
+    version: v1.0.1
 
   # Will be re-instated once the PR has been accepted
   # - name: githubixx.ansible_role_wireguard
